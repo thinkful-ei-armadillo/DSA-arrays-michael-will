@@ -239,12 +239,57 @@ function remove(string, letters){
 
 
 
+
+
 // console.log(remove('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
 
 //10 Products
 
 /* Input:[1, 3, 9, 4], Output:[108, 36, 12, 27] */
 
+// let array = [1, 3, 9, 4];
+
+function massProduct(array){
+  let product = [];
+  let pro = 1;
+  for (let i = 0; i < array.length; i++){
+    pro = pro * array[i];
+  }
+  for (let i = 0; i < array.length; i++){
+    product.push(pro / array[i]);
+  }
+
+  return product;
+
+
+}
+
+// console.log(massProduct(array));
+
+//11.  2D Array
+
+/* [[1,0,1,1,0],
+[0,1,1,1,0],
+[1,1,1,1,1],
+[1,0,1,1,1],
+[1,1,1,1,1]];
+
+Output: [[0,0,0,0,0],
+[0,0,0,0,0],
+[0,0,1,1,0],
+[0,0,0,0,0],
+[0,0,1,1,0]]; */
+
+function newMaze(array){
+  for (let i = 0; i < array.length; i++){
+    if (array[i] + array[i+1] <  2){
+      array[i] = array[i] * 0;
+    }
+  }
+  return array;
+}
+
+console.log(newMaze([1, 1, 0, 1, 1]));
 
 
 // console.log(urlChange('tauhida parveen'));
