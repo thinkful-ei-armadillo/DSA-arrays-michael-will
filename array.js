@@ -134,7 +134,120 @@ function main() {
 
 
 
-main();
+// main();
+
+//5. URLify a string
+
+function urlChange(str) {
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === ' ') {
+      result += '%20';
+    } else {
+      result += str[i];
+    }
+  }
+  return result;
+}
+
+// console.log(urlChange('tauhida parveen'));
+// console.log(urlChange('www.thinkful.com /tauh ida parv een'));s 
+
+//6.  Filter
+// input = [3, 4, 5, 6, 7], output = [6, 7]
+
+function filterArray(array){
+  let newArray = [];
+  for (let i = 0; i < array.length; i++){
+    if (array[i] > 4){
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+
+// console.log(filterArray([3,4,5,6,7]));
+
+//7.  Max sum in the array
+
+/* input = [4, 6, -3, 5, -2, 1]
+output = 12 */
+
+function maxSum (arr){
+  let largest = 0;
+  let current = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (current > largest) {
+      largest = current;
+    }
+    current += arr[i];
+  }
+  return largest;
+}
+
+// console.log(maxSum([4, 6, -3, 5, -2, 1, 7, -4]));
+
+/* 8 Merge Arrays
+ input = [1, 3, 6, 8, 11] and [2, 3, 5, 8, 9, 10], output = [1, 2, 3, 3, 5, 6, 8, 8, 9, 10, 11]*/
+
+// const input = [1, 3, 6, 8, 11];
+// const output = [1, 2, 3, 3, 5, 6, 8, 8, 9, 10, 11];
+
+function mergeArrays (arr1, arr2){
+  let newArray = [...arr1, ...arr2];
+  let left = newArray[0];
+  let right = newArray[newArray.length - 1];
+  // while (right > left){
+  //   while (left < right){
+  //     left++;
+  //   }
+  //   while (right > left){
+  //     right--;
+  //   }
+  //   if (right < left){
+  //     swap(left, right);
+  //   }
+  //   left++;
+  //   right++;
+  // }
+
+  return newArray.sort(function (a,b){return a - b;});
+}
+
+// console.log(mergeArrays(input, output));
+
+
+// 9. Remove characters
+
+// Input:'Battle of the Vowels: Hawaii vs. Grozny', 'aeiou', 
+// Output: 'Bttl f th Vwls: Hw vs. Grzny' *
+
+function remove(string, letters){
+  
+  let result = '';
+  for (let i = 0; i < string.length; i++) {
+    if (!letters.includes(string[i])) {
+      result += string[i];
+    }
+  }
+  return result;
+
+  
+}
+
+
+
+
+
+// console.log(remove('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
+
+//10 Products
+
+/* Input:[1, 3, 9, 4], Output:[108, 36, 12, 27] */
+
+
+
+// console.log(urlChange('tauhida parveen'));
 
 
 
